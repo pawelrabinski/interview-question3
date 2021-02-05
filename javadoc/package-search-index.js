@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.backbase.forum"},{"l":"com.backbase.forum.controller"},{"l":"com.backbase.forum.dto"},{"l":"com.backbase.forum.entity"},{"l":"com.backbase.forum.exception"},{"l":"com.backbase.forum.repository"},{"l":"com.backbase.forum.service"}]

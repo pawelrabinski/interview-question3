@@ -8,6 +8,7 @@ Forum System API
 * Application should be available at URL `http://localhost:5000/questions`
 * Application is using Lombok. Please install Lombok plugin in your IDE.
 * Application is running with in memory H2 database
+* Javadoc is attached in directory `/javadoc`
 
 # API Endpoints
 

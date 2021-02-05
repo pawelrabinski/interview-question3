@@ -12,6 +12,12 @@ import java.util.stream.Collectors;
 @Service
 public class ObjectConverter {
 
+    /**
+     * Given a QuestionDTO object, parses it to a QuestionEntity object
+     *
+     * @param questionDTO - QuestionDTO object to be parsed
+     * @return QuestionEntity
+     */
     public QuestionEntity convertQuestionDTOtoEntity(QuestionDTO questionDTO) {
         return QuestionEntity.builder()
                 .author(questionDTO.getAuthor())
@@ -19,6 +25,12 @@ public class ObjectConverter {
                 .build();
     }
 
+    /**
+     * Given a QuestionEntity object, parses it to a QuestionDTO object
+     *
+     * @param questionEntity - QuestionEntity object to be parsed
+     * @return QuestionDTO
+     */
     public QuestionDTO convertQuestionEntityToDTO(QuestionEntity questionEntity) {
         return QuestionDTO.builder()
                 .id(questionEntity.getId())
@@ -28,6 +40,12 @@ public class ObjectConverter {
                 .build();
     }
 
+    /**
+     * Given a ReplyDTO object, parses it to a ReplyEntity object
+     *
+     * @param replyDTO - QuestionEntity object to be parsed
+     * @return ReplyEntity
+     */
     public ReplyEntity convertReplyDTOtoEntity(ReplyDTO replyDTO) {
         return ReplyEntity.builder()
                 .author(replyDTO.getAuthor())
@@ -35,6 +53,13 @@ public class ObjectConverter {
                 .build();
     }
 
+    /**
+     * Given a ReplyEntity object and Long object with the value of questionId, parses it to a ReplyDTO object
+     *
+     * @param questionId  - Id of a question that reply is related to
+     * @param replyEntity - QuestionEntity object to be parsed
+     * @return ReplyDTO
+     */
     public ReplyDTO convertReplyEntityToDTO(ReplyEntity replyEntity, Long questionId) {
         return ReplyDTO.builder()
                 .id(replyEntity.getId())
@@ -44,6 +69,12 @@ public class ObjectConverter {
                 .build();
     }
 
+    /**
+     * Given a QuestionEntity object, parses it to a ThreadDTO object
+     *
+     * @param questionEntity - QuestionEntity object to be parsed
+     * @return ThreadDTO
+     */
     public ThreadDTO convertQuestionEntityToThreadDTO(QuestionEntity questionEntity) {
         return ThreadDTO.builder()
                 .id(questionEntity.getId())

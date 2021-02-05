@@ -24,6 +24,10 @@ class ObjectConverterTest {
     private List<ReplyEntity> replyList = new ArrayList<>();
 
 
+    /**
+     * Scenario: Given QuestionDTO object,
+     * convertQuestionDTOtoEntity method returns not null, correctly mapped QuestionEntity object
+     */
     @Test
     void shouldQuestionDTOconvertToEntity() {
         //given
@@ -45,6 +49,10 @@ class ObjectConverterTest {
         assertNull(questionEntity.getReplies());
     }
 
+    /**
+     * Scenario: Given QuestionEntity object,
+     * convertQuestionEntityToDTO method returns not null, correctly mapped QuestionDTO object
+     */
     @Test
     void shouldQuestionEntityConvertToDTO() {
         //given
@@ -66,6 +74,10 @@ class ObjectConverterTest {
         assertEquals(questionDTO.getReplies(), 0);
     }
 
+    /**
+     * Scenario: Given ReplyDTO object,
+     * convertReplyDTOtoEntity method returns not null, correctly mapped ReplyEntity object
+     */
     @Test
     void shouldReplyDTOconvertToEntity() {
         //given
@@ -87,8 +99,12 @@ class ObjectConverterTest {
         assertEquals(replyEntity.getMessage(), replyDTO.getMessage());
     }
 
+    /**
+     * Scenario: Given QuestionEntity object ReplyEntity object related to QuestionEntity object,
+     * convertReplyEntityToDTO method returns not null, correctly mapped ReplyDTO object
+     */
     @Test
-    void convertReplyEntityToDTO() {
+    void shouldConvertReplyEntityToDTO() {
         //given
         QuestionEntity questionEntity = QuestionEntity.builder()
                 .id(id2)
@@ -115,6 +131,10 @@ class ObjectConverterTest {
         assertEquals(replyDTO.getQuestionId(), replyEntity.getQuestion().getId());
     }
 
+    /**
+     * Scenario: Given QuestionEntity object,
+     * convertQuestionEntityToThreadDTO method returns not null, correctly mapped ThreadDTO object
+     */
     @Test
     void convertQuestionEntityToThreadDTO() {
         //given

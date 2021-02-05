@@ -1,0 +1,7 @@
+com.backbase.forum
+com.backbase.forum.controller
+com.backbase.forum.dto
+com.backbase.forum.entity
+com.backbase.forum.exception
+com.backbase.forum.repository
+com.backbase.forum.service
