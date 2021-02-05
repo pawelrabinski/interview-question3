@@ -163,4 +163,32 @@ class ForumApplicationTests {
                 .andExpect(status().isBadRequest());
     }
 
+    @Test
+    public void shouldReturn404forNonExistingQuestionWhileAddingReply() throws Exception {
+        //given
+        String body = "{\"author\":\"testAuthor\",\"message\":\"testMessage\"}";
+        long questionId = 9999L;
+        String url = CONTEXT_PATH + "/" + questionId + "/reply";
+
+        //when
+        mockMvc.perform(post(url).content(body).contentType(JSON_CONTENT_TYPE))
+
+                // then
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void shouldReturn404AddingReplyWithWrongUrl() throws Exception {
+        //given
+        String body = "{\"author\":\"testAuthor\",\"message\":\"testMessage\"}";
+        long questionId = 9999L;
+        String url = CONTEXT_PATH + "/" + questionId + "/incorrect-reply-url";
+
+        //when
+        mockMvc.perform(post(url).content(body).contentType(JSON_CONTENT_TYPE))
+
+                // then
+                .andExpect(status().isNotFound());
+    }
+
 }
